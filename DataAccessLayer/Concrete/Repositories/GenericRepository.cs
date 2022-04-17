@@ -24,13 +24,25 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Delete(T item)
         {
-            _object.Remove(item);
+            var detetedEntity = db.Entry(item);
+            detetedEntity.State = EntityState.Deleted;
+            //_object.Remove(item);
             db.SaveChanges();
+        }
+
+
+        //id bulacak
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
         }
 
         public void Insert(T item)
         {
-            _object.Add(item);
+
+            var addedEntity = db.Entry(item);
+            addedEntity.State = EntityState.Added;
+            //_object.Add(item);
             db.SaveChanges();
 
         }
@@ -47,6 +59,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(T item)
         {
+            var updatedEntity = db.Entry(item);
+            updatedEntity.State = EntityState.Modified;
             db.SaveChanges();
         }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DataAccessLayer.Absract
 {
     using EntityLayer.Concrete;
-    public interface IContentDal:IRepository<Content>
+    public interface IContectDal:IRepository<Content>
     {
     }
 }

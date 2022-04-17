@@ -22,6 +22,8 @@ namespace EntityLayer.Concrete
         public string HeadingName { get; set; }
         public DateTime HeadingDate { get; set; }
 
+        public bool HeadingStatus { get; set; }
+
 
         [ForeignKey("Category")]
         public int CategoryID { get; set; }
