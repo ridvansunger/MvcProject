@@ -8,7 +8,7 @@ namespace DataAccessLayer.Absract
 {
     using EntityLayer.Concrete;
 
-    interface IContactDal:IRepository<Contact>
+    public interface IContactDal : IRepository<Contact>
     {
     }
 }

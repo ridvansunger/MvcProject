@@ -15,8 +15,11 @@ namespace DataAccessLayer.Absract
         void Update(T item);
         void Delete(T item);
 
+        //ID bulma işlemi, tek değer döndürmek için kullanılacak
+        T Get(Expression<Func<T, bool>> filter);
 
-        //filtre işlemleri için kullanılacak
+
+        //filtre işlemleri için kullanılacak, liste şeklinde döner
         List<T> List(Expression<Func<T, bool>> filter);
     }
 }
